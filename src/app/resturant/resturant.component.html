@@ -1,0 +1,20 @@
+<h1>Restaurant list</h1>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>User Id</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>Open Time</th>
+        <th>Close Time</th>
+    </tr>
+    <tr *ngFor="let item of restaurants">
+        <td>{{ item.restname }}</td>
+        <td>{{ item.userid }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.contact }}</td>
+        <td>{{ item.opentime | date:'mediumTime' }}</td>
+        <td>{{ item.closetime | date:'mediumTime' }}</td>
+        <td><button (click)="getRest(item.restid ?? 0)">View</button></td>
+    </tr>
+</table>

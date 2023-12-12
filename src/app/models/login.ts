@@ -1,4 +1,9 @@
 export default class Login{
-    username:String="";
-    password:String=""
+    email:String="";
+    password:String="";
+
+    constructor(email: string, password: string) {
+        this.email = email;
+        this.password = password;
+      }
 }

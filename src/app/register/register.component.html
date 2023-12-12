@@ -1,0 +1,83 @@
+<!-- <div>
+    <h2>Create User</h2>
+    <form (submit)="createUser()">
+      <div>
+        <label for="custname">Username:</label>
+        <input type="text" id="custname" name="custname" [(ngModel)]="custname" required>
+      </div>
+      <div>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" [(ngModel)]="gender" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" [(ngModel)]="email" required>
+      </div>
+      <div>
+        <label for="profilepic">Profile Picture:</label>
+        <input type="text" id="profilepic" name="profilepic" [(ngModel)]="profilepic" required>
+      </div>
+      <div>
+        <label for="contactnumber">Contact Number:</label>
+        <input type="text" id="contactnumber" name="contactnumber" [(ngModel)]="contactnumber" required>
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <input type="textarea" id="address" name="address" [(ngModel)]="address" required>
+      </div>
+      <button type="submit">Register User</button>
+    </form>
+  </div> -->
+
+  <div id="wrapper" style="background-color: black;">
+    <div id="left">
+      <div id="signin">
+        <div class="logo">
+          <img src="/assets/uploads/logo1.png" alt="Dining Domain" style="margin-top: 20px;"height="150px" width="50px" />
+          <p class="left" style="color: white; font-size: xx-large;">REGISTRATION</p>
+        </div>
+        <form (submit)="createUser()">
+          <div>
+            <label>Customer Name</label>
+            <input type="text" class="text-input" [(ngModel)]="custname" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Password</label>
+            <input type="password" class="text-input" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Gender</label>
+            <input type="text" class="text-input" [(ngModel)]="gender" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Profile</label>
+            <input type="text" class="text-input" [(ngModel)]="profilepic" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Contact Number</label>
+            <input type="text" class="text-input"  [(ngModel)]="contactnumber" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <button type="submit" class="primary-btn">Register</button>
+        </form>
+        
+      
+      </div>
+    
+    </div>
+    <div id="right">
+      <div id="showcase">
+        <div class="showcase-content">
+          <h1 class="showcase-text">
+             <strong>The Dining Domain</strong>
+            
+          </h1>
+          <h4 style="color: white;"> We Are waiting for you!</h4>
+          <!-- <a href="#" class="secondary-btn">Start a FREE 10-day trial</a> -->
+        </div>
+      </div>
+    </div>
+  </div>

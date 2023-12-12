@@ -1,0 +1,34 @@
+<!-- booking.component.html -->
+
+<div>
+    <h2>Booking Form</h2>
+    <form (ngSubmit)="BookingTable()" #bookingForm="ngForm">
+      
+  
+      <div>
+        <label for="tableid">Table Number:</label>
+        <select id="tableid" name="tableid" [(ngModel)]="tableid" required>
+          <option *ngFor="let table of tablelist" [value]="table.tableid">{{ table.tablenumber }}</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="noperson">Number of Persons:</label>
+        <input type="number" id="noperson" name="noperson" [(ngModel)]="noperson" required>
+      </div>
+  
+      <div>
+        <label for="occasion">Occasion:</label>
+        <input type="text" id="occasion" name="occasion" [(ngModel)]="occasion" required>
+      </div>
+  
+      <div>
+        <label for="datetime">Date and Time:</label>
+        <input type="datetime-local" id="datetime" name="datetime" [(ngModel)]="datetime" required>
+      </div>
+  
+  
+      <button type="submit" [disabled]="!bookingForm.valid">Book Table</button>
+    </form>
+  </div>
+  
