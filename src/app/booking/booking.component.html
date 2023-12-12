@@ -8,6 +8,7 @@
       <div>
         <label for="tableid">Table Number:</label>
         <select id="tableid" name="tableid" [(ngModel)]="tableid" required>
+          <option value="Select Table No" selected>--- Select Table No ---</option>
           <option *ngFor="let table of tablelist" [value]="table.tableid">{{ table.tablenumber }}</option>
         </select>
       </div>

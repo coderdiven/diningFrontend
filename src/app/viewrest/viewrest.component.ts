@@ -21,7 +21,9 @@ export class ViewrestComponent {
     this.viewRest();
 
   }
-   
+  isTableAvailable(): boolean {
+    return this.table.some(t => t?.status === 1);
+  }
    getTableData(id: number): void {
     this.restaurantService.getTable(id).subscribe(
       (result:any) => {

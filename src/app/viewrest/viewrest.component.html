@@ -1,4 +1,4 @@
-<h1 *ngFor="let item of restaurant">Deatils of {{ item.restname }}</h1>
+<!-- <h1 *ngFor="let item of restaurant">Deatils of {{ item.restname }}</h1>
 <table border="1" cellpadding="10">
     <tr>
         <th>Restaurant Name</th>
@@ -34,4 +34,41 @@
     </ng-container>
   </div>
 
+ -->
+ <h1 *ngFor="let item of restaurant">Details of {{ item.restname }}</h1>
 
+ <table border="1" cellpadding="10">
+     <tr>
+         <th>Restaurant Name</th>
+         <th>Owner</th>
+         <th>Address</th>
+         <th>Contact</th>
+         <th>Open Time</th>
+         <th>Close Time</th>
+         <th>State</th>
+         <th>City</th>
+     </tr>
+     <tr *ngFor="let item of restaurant">
+         <td>{{ item.restname }}</td>
+         <td>{{ item.username }}</td>
+         <td>{{ item.address }}</td>
+         <td>{{ item.contact }}</td>
+         <td>{{ item.opentime | date:'mediumTime' }}</td>
+         <td>{{ item.closetime | date:'mediumTime' }}</td>
+         <td>{{ item.statename }}</td>
+         <td>{{ item.cityname }}</td>
+     </tr>
+ </table>
+ 
+ <br>
+ 
+ <!-- viewrest.component.html -->
+
+<!-- Your existing HTML code... -->
+
+<div *ngIf="isTableAvailable()">
+  <input type="button" (click)="LoadBooking(table[0]?.restid ?? 0)" value="Reservation">
+</div>
+<div *ngIf="!isTableAvailable()">
+  <p style="color: red;">All tables are booked.</p>
+</div>
