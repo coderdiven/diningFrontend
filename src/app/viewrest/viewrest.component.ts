@@ -7,23 +7,30 @@ import City from '../models/city';
 import State from '../models/state';
 import Register from '../models/register';
 import Table from '../models/table';
+import Item from '../models/item';
+import Category from '../models/category';
 @Component({
   selector: 'app-viewrest',
   templateUrl: './viewrest.component.html',
   styleUrls: ['./viewrest.component.css']
 })
 export class ViewrestComponent {
+
   restaurant: Restaurant[] = [];
   userId: number | null = null; // or initialize it to a default value
   table: any[] =[];
+  items: Item[]=[];
+  category:Category[]=[];
 
   constructor(private router:Router,private route: ActivatedRoute,private restaurantService: ResturantService) {
     this.viewRest();
-
   }
+
+  
   isTableAvailable(): boolean {
     return this.table.some(t => t?.status === 1);
   }
+
    getTableData(id: number): void {
     this.restaurantService.getTable(id).subscribe(
       (result:any) => {
@@ -47,7 +54,7 @@ export class ViewrestComponent {
       }
     );
   }
-    viewRest() {
+   viewRest() {
       this.route.params.subscribe(params => {
         const id = +params['id'];
     
@@ -88,6 +95,13 @@ export class ViewrestComponent {
                 console.error('Error fetching user:', error);
               }
             );
+
+            // For Category 
+
+            this.restaurantService.getcategories(id).subscribe((Result:any)=>{
+              this.category=Result;
+            });
+
             this.getTableData(id);
 
             console.log(data);
@@ -101,6 +115,16 @@ export class ViewrestComponent {
       });
     }
     
+    viewItemsByCatid(catid:number){
+        this.route.params.subscribe(params=>{
+          const id = +params['id'];
+          this.restaurantService.getitemsBycat(id,catid).subscribe((result:any)=>{
+            this.items=result;
+            console.log(result);
+          })
+        })
+        
+    }
   }
   
 

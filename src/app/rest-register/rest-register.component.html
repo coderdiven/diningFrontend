@@ -1,0 +1,53 @@
+
+  <div id="wrapper" style="background-color: black;">
+    <div id="left">
+      <div id="signin">
+        <div class="logo">
+          <!-- <img src="/assets/uploads/logo1.png" alt="Dining Domain" style="margin-top: 20px;"height="150px" width="50px" /> -->
+          <p class="left" style="color: white; font-size: xx-large;">REGISTRATION RESTURANT</p>
+        </div>
+        <form (submit)="createUser()">
+          <div>
+            <label>User Name</label>
+            <input type="text" class="text-input" [(ngModel)]="username" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Password</label>
+            <input type="password" class="text-input" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Gender</label>
+            <input type="text" class="text-input" [(ngModel)]="gender" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" class="text-input" [(ngModel)]="email" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Profile</label>
+            <input type="text" class="text-input" [(ngModel)]="profilepic" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <div>
+            <label>Contact Number</label>
+            <input type="text" class="text-input"  [(ngModel)]="contactnumber" [ngModelOptions]="{standalone:true}"/>
+          </div>
+          <button type="submit" class="primary-btn">Register</button>
+        </form>
+        
+      
+      </div>
+    
+    </div>
+    <div id="right">
+      <div id="showcase">
+        <div class="showcase-content">
+          <h1 class="showcase-text">
+             <strong>The Dining Domain</strong>
+            
+          </h1>
+          <h4 style="color: white;"> We Are waiting for you!</h4>
+          <!-- <a href="#" class="secondary-btn">Start a FREE 10-day trial</a> -->
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,4 +1,4 @@
-<h1>Restaurant list</h1>
+<!-- <h1>Restaurant list</h1>
 <table border="1" cellpadding="10">
     <tr>
         <th>Restaurant Name</th>
@@ -17,4 +17,134 @@
         <td>{{ item.closetime | date:'mediumTime' }}</td>
         <td><button (click)="getRest(item.restid ?? 0)">View</button></td>
     </tr>
-</table>
+</table> -->
+
+<body >
+
+    <div class="header">
+ 
+       <ul class="nav-list">
+          <li class="nav-item"> Home</li>
+          <li class="nav-item"> Service</li>
+          <li class="nav-item"> Blog</li>
+          <li class="nav-item"> Search</li>
+       </ul>
+ 
+       <h1 class="title"> Taste The <span> Difference</span> </h1>
+ 
+       <p class="desc">BOOK NOW </p>
+ 
+       
+ 
+    </div>
+ 
+    <!-- <div class="card mb-3" style="max-width: 600px;margin-top: 80px;background-color: black;">
+     <div class="row g-0">
+       <div class="col-md-4">
+         <img src="assets/uploads/food.jpg" class="img-fluid rounded" alt="...">
+       </div>
+       <div class="col-md-8">
+         <div class="card-body" style="margin-left: 20px;color: white;">
+           <h5 class="card-title" >Aobut</h5>
+           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           <p class="card-text"><small class="text-body-secondary"></small></p>
+         </div>
+       </div>
+     </div>
+   </div>
+     -->
+  
+     <div class="wrapper">
+       <div class="headline">
+           <h3 style="font-size: 30px;">About</h3>
+       </div>
+       <div class="cols">
+           <div class="col" ontouchstart="this.classList.toggle('hover');">
+ 
+               <div class="container">
+ 
+                   <div class="front"
+                       style="background-image: url('assets/uploads/food.jpg')">
+                       <div class="inner">
+                           <p></p>
+                           <span></span>
+                       </div>
+                   </div>
+                   <div class="back">
+                       <div class="inner">
+                           <p>Clean code always looks like it was written by someone who cares.</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="col" ontouchstart="this.classList.toggle('hover');">
+               <div class="container">
+                   <div class="front"
+                       style="background-image: url('assets/uploads/food.jpg')">
+                       <div class="inner">
+                           <p></p>
+                           <span> </span>
+                       </div>
+                   </div>
+                   <div class="back">
+                       <div class="inner">
+                           <p>Programming is learned by writing programs.</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           </div>
+           
+       </div>
+   
+ 
+ 
+ 
+       <div class="container">
+ 
+         <div class="burger-menu">
+           <h2>Booking Restaurant</h2>
+           <p>Choose your favourite restaurants and Book.</p>
+           <div class="items">
+             <div class="item" *ngFor="let rest of restaurants">
+                 <img src="assets/uploads/food.jpg" alt="Fresh Burger" class="burger-bg">
+                 <div class="item-details">
+                     <h4 class="item-name">{{rest.restname}}</h4>
+                     <h5 class="item-price">{{ rest.opentime | date:'mediumTime' }}</h5>
+                     <h5 class="item-price">{{ rest.closetime | date:'mediumTime' }}</h5>
+                     <!-- <a href="" class="buy-now-btn">View</a> -->
+                     <button  class="buy-now-btn" (click)="getRest(rest.restid ?? 0)">View</button>
+                 </div>
+             </div>
+             <!-- <div class="item">
+                 <img src="assets/uploads/food.jpg" alt="Fresh Burger" class="burger-bg">
+                 <div class="item-details">
+                     <h4 class="item-name">Spice Villa</h4>
+                     <h5 class="item-price">$2.85</h5>
+                     <a href="" class="buy-now-btn">Book Now</a>
+                 </div>
+             </div>
+             <div class="item">
+                 <img src="assets/uploads/food.jpg" alt="Fresh Burger" class="burger-bg">
+                 <div class="item-details">
+                     <h4 class="item-name">Spice Villa</h4>
+                     <h5 class="item-price">$2.85</h5>
+                     <a href="" class="buy-now-btn">Book Now</a>
+                 </div>
+             </div>
+             <div class="item">
+                 <img src="assets/uploads/food.jpg" alt="Fresh Burger" class="burger-bg">
+                 <div class="item-details">
+                     <h4 class="item-name">Spice Villa</h4>
+                     <h5 class="item-price">$2.85</h5>
+                     <a href="" class="buy-now-btn">Book Now</a>
+                 </div>
+             </div> -->
+           </div>
+         </div>
+     </div>
+   
+ </body>
+ 
+ 
+ 

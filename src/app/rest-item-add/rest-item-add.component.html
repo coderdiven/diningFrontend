@@ -1,0 +1,36 @@
+<form (ngSubmit)="createItem()">
+    <div class="form-group">
+      <label for="itemname">Item Name:</label>
+      <input type="text" id="itemname" name="itemname" [(ngModel)]="itemname" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="description" required></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" [(ngModel)]="price" required>
+    </div>
+  
+    <div class="form-group">
+        <label for="catid">Category:</label>
+        <select id="catid" name="catid" [(ngModel)]="catid" required>
+            <option *ngFor="let c of cat" [value]="c.catid">
+                
+              {{ c.catname }}
+            </option>
+          </select>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Availbility:</label>
+        <select id="status" name="status" [(ngModel)]="status" required>
+            <option  [value]="1">Available</option>
+            <option  [value]="0">No Available</option>
+          </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  

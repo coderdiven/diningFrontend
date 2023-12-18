@@ -13,7 +13,7 @@ export class BookingComponent {
   constructor(private route: ActivatedRoute,private router: Router,private ResturantService: ResturantService) { }
 
   tablelist: any;
-
+  
   ngOnInit() {
     
     this.route.params.subscribe(params => {
@@ -36,6 +36,7 @@ export class BookingComponent {
    datetime:Date |null=null;
    restid:number|null=null;
 
+   
    BookingTable(){
     this.route.params.subscribe(params => {
       const id = +params['id'];
@@ -54,7 +55,7 @@ export class BookingComponent {
       this.ResturantService
       .bookingTable(newBooking).subscribe(
         (result) => {
-          
+          this.router.navigate(["/viewrest"]);
           console.log('Booking successfully:');
         },
         (error) => {

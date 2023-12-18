@@ -1,38 +1,35 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ResturantService } from '../resturant.service';
 import Register from '../models/register';
-import { Router } from '@angular/router';
-import Customer from '../models/cust';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-rest-register',
+  templateUrl: './rest-register.component.html',
+  styleUrls: ['./rest-register.component.css']
 })
-export class RegisterComponent {
+export class RestRegisterComponent {
   email:String="";
   password:String="";
   gender:String="";
-  custname:String="";
+  username:String="";
   profilepic:String="";
   contactnumber:String="";
-  address:String="";
 
   constructor(private router: Router,private ResturantService: ResturantService) { }
 
   createUser() {
-    const newCust: Customer = {
-      custname: this.custname,
+    const newUser: Register = {
+      username: this.username,
       gender: this.gender,
       password: this.password,
       email: this.email,
       profilepic: this.profilepic,
       contactnumber: this.contactnumber,
-      address:this.address
     };
 
     this.ResturantService
-    .createCust(newCust).subscribe(
+    .createUser(newUser).subscribe(
       (result) => {
         this.router.navigate(['/login']);
         

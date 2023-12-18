@@ -1,0 +1,24 @@
+
+<h1><a href="restaddcat" class="btn btn-primary">Add Category</a></h1>
+
+<table class="table">
+  
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">category ID</th>
+        <th scope="col">name</th>
+        <th scope="col">restid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cat">
+        <th scope="row">{{item.catid}}</th>
+        <td>{{item.catname}}</td>
+        <td>{{item.restid}}</td>
+        <td><button  class="buy-now-btn" (click)="DeleteCat(item.catid ?? 0)">Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+ 

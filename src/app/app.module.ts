@@ -9,6 +9,14 @@ import { RegisterComponent } from './register/register.component';
 import { ResturantComponent } from './resturant/resturant.component';
 import { ViewrestComponent } from './viewrest/viewrest.component';
 import { BookingComponent } from './booking/booking.component';
+import { RestLoginComponent } from './rest-login/rest-login.component';
+import { RestRegisterComponent } from './rest-register/rest-register.component';
+import { RestHomeComponent } from './rest-home/rest-home.component';
+import { RestItemComponent } from './rest-item/rest-item.component';
+import { RestCategoryComponent } from './rest-category/rest-category.component';
+import { RestItemAddComponent } from './rest-item-add/rest-item-add.component';
+import { RestItemEditComponent } from './rest-item-edit/rest-item-edit.component';
+import { RestCataddComponent } from './rest-catadd/rest-catadd.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +25,15 @@ import { BookingComponent } from './booking/booking.component';
     RegisterComponent,
     ResturantComponent,
     ViewrestComponent,
-    BookingComponent
+    BookingComponent,
+    RestLoginComponent,
+    RestRegisterComponent,
+    RestHomeComponent,
+    RestItemComponent,
+    RestCategoryComponent,
+    RestItemAddComponent,
+    RestItemEditComponent,
+    RestCataddComponent
   ],
   imports: [
     BrowserModule,

@@ -19,11 +19,12 @@ export class LoginComponent  {
   onSubmit() {
     if(this.cust.email=="" && this.cust.password=="")
     {
-      console.log("bhul che");
+      var msg="Please enter email and password";
+      alert(msg);
+      console.log("Please enter email and password");
     }
     else
     {
-      console.log("ganta thtu nathi");
       this.ResturantService.login(this.cust).subscribe(
         (result) => {
           localStorage.setItem('cust', result.custid);
@@ -32,7 +33,9 @@ export class LoginComponent  {
           // Handle the successful login, e.g., store the token in local storage
         },
         (error) => {
-          console.error('Login failed:', error);
+          var msg="Invalid input,Login failed:";
+          alert(msg);
+          console.error('Invalid input,Login failed:', error);
           // Handle the login error
         }
       );
